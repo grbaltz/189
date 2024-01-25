@@ -70,8 +70,8 @@ def freq_height_feature(text, freq):
 def freq_featured_feature(text, freq):
     return float(freq['featured'])
 
-def freq_differ_feature(text, freq):
-    return float(freq['differ'])
+# def freq_differ_feature(text, freq):
+#     return float(freq['differ'])
 
 def freq_width_feature(text, freq):
     return float(freq['width'])
@@ -141,6 +141,54 @@ def freq_and_feature(text, freq):
 def example_feature(text, freq):
     return int('example' in text)
 
+def freq_question_feature(text, freq):
+    return text.count('?')
+
+def freq_penis_feature(text, freq):
+    return float(freq['penis'])
+
+def freq_enlargement_feature(text, freq):
+    return float(freq['enlargement'])
+
+def freq_enlarge_feature(text, freq):
+    return float(freq['enlarge']) 
+
+def freq_pussy_feature(text, freq):
+    return float(freq['pussy'])
+
+def freq_erection_feature(text, freq):
+    return float(freq['erection'])
+
+def freq_ejaculation_feature(text, freq):
+    return float(freq['ejaculation'])
+
+def freq_naturalgain_feature(text, freq):
+    return float(freq['naturalgain'])
+
+def freq_cheap_feature(text, freq):
+    return float(freq['cheap'])
+
+def freq_viagra_feature(text, freq):
+    return float(freq['viagra'])
+
+def freq_click_feature(text, freq):
+    return float(freq['click'])
+
+def freq_rolex_feature(text, freq):
+    return float(freq['rolex'])
+
+def freq_special_feature(text, freq):
+    return float(freq['special'])
+
+def freq_final_feature(text, freq):
+    return float(freq['final'])
+
+def freq_product_feature(text, freq):
+    return float(freq['product'])
+
+def freq_real_feature(text, freq):
+    return float(freq['real'])
+
 # Generates a feature vector
 def generate_feature_vector(text, freq):
     feature = []
@@ -154,7 +202,7 @@ def generate_feature_vector(text, freq):
     feature.append(freq_creative_feature(text, freq))
     feature.append(freq_height_feature(text, freq))
     feature.append(freq_featured_feature(text, freq))
-    feature.append(freq_differ_feature(text, freq))
+    # feature.append(freq_differ_feature(text, freq))
     feature.append(freq_width_feature(text, freq))
     feature.append(freq_other_feature(text, freq))
     feature.append(freq_energy_feature(text, freq))
@@ -179,6 +227,22 @@ def generate_feature_vector(text, freq):
 
     # --------- Add your own features here ---------
     # Make sure type is int or float
+
+    feature.append(freq_question_feature(text, freq))
+    feature.append(freq_penis_feature(text, freq))
+    feature.append(freq_enlarge_feature(text, freq))
+    feature.append(freq_pussy_feature(text, freq))
+    feature.append(freq_erection_feature(text, freq))
+    feature.append(freq_ejaculation_feature(text, freq))
+    feature.append(freq_naturalgain_feature(text, freq))
+    feature.append(freq_cheap_feature(text, freq))
+    feature.append(freq_viagra_feature(text, freq))
+    feature.append(freq_click_feature(text, freq))
+    feature.append(freq_rolex_feature(text, freq))
+    feature.append(freq_special_feature(text, freq))
+    feature.append(freq_final_feature(text, freq))
+    feature.append(freq_product_feature(text, freq))
+    feature.append(freq_real_feature(text, freq))
 
     return feature
 

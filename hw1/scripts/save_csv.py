@@ -1,6 +1,8 @@
 # A code snippet to help you save your results into a kaggle accepted csv
 import pandas as pd
 import numpy as np
+from sklearn import svm
+
 
 # Usage: results_to_csv(clf.predict(X_test))
 def results_to_csv(y_test):
