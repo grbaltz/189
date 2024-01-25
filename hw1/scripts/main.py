@@ -1,4 +1,8 @@
 # %%
+import sys
+
+print(sys.version)
+# %%
 # This file is in scripts/load.py
 import sys
 if sys.version_info[0] < 3:
@@ -65,6 +69,7 @@ def spam_partition():
 
 # %%
 def accuracy(y, y_hat):
+    assert len(y) == len(y_hat)
     n = len(y)
     accuracy = 0
     for i in np.arange(0, n):
@@ -96,8 +101,12 @@ def train_svm_mnist():
     plt.plot(sizes, val_accs, label="Validation Accuracy")
     plt.xlabel("Training Sizes")
     plt.ylabel("Accuracy")
+    plt.title("MNIST Training Accuracies")
     plt.legend()
     plt.plot()
+
+# %%
+train_svm_mnist()
 
 # %%
 def train_svm_spam():
@@ -123,12 +132,13 @@ def train_svm_spam():
     plt.plot(sizes, val_accs, label="Validation Accuracy")
     plt.xlabel("Training Sizes")
     plt.ylabel("Accuracy")
+    plt.title("Spam Training Accuracies")
     plt.legend()
     plt.show()
 
 # %%
     
-#train_svm_spam()
+train_svm_spam()
 
 # %%
 def mnist_c_manipulation():
